@@ -203,6 +203,7 @@ const CreatePost: React.FC = () => {
           console.error("no token found");
           throw new Error("not logged in");
         }
+        console.log('===============================', token)
         const { data } = await axios.get(
           `${BASE_URL}/api/v1/upload/create_upload`,
           {
@@ -211,6 +212,8 @@ const CreatePost: React.FC = () => {
             },
           }
         );
+
+        console.log('===============================', data)
 
         console.log("data from the create_upload", data);
 
